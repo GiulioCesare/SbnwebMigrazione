@@ -1,0 +1,9 @@
+.project
+.classpath
+.settings
+CVS/
+bin/
+**/offlineExport/
+**/sbn/polo/
+*.txt
+

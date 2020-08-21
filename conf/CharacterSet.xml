@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Caratteri speciali unimarc specifici per SBN suddivisi pr set 
+-->
+<SBN>
+	<CARATTERI>
+
+
+
+<!-- MAIUSCOLE -->
+	<CARATTERE UNICODE="00C1" unicodeLower="00E1" UPPER="Á"   lower="á"  base="a"	NAME="A_ACCENTO_ACUTO"></CARATTERE>                    
+	<CARATTERE UNICODE="00C2" unicodeLower="00E2" UPPER="Â"   lower="â"  base="a"	NAME="A_ACCENTO_CIRCONFLESSO"></CARATTERE>             
+	<CARATTERE UNICODE="00C0" unicodeLower="00E0" UPPER="À"   lower="à"  base="a"	NAME="A_ACCENTO_GRAVE"></CARATTERE>                    
+	<CARATTERE UNICODE="0102" unicodeLower="0103" UPPER="Ă"   lower="ă"  base="a"	NAME="A_CON_BREVE_SOPRASCRITTA"></CARATTERE>           
+	<CARATTERE UNICODE="00C5" unicodeLower="00E5" UPPER="Å"   lower="å"  base="a"	NAME="A_CON_CIRCOLETTO_SOPRASCRITTO"></CARATTERE>      
+	<CARATTERE UNICODE="00C4" unicodeLower="00E4" UPPER="Ä"   lower="ä"  base="a"	NAME="A_CON_DIERESI"></CARATTERE>                      
+	<CARATTERE UNICODE="0104" unicodeLower="0105" UPPER="Ą"   lower="ą"  base="a"	NAME="A_CON_GANCIO_A_DESTRA"></CARATTERE>              
+	<CARATTERE UNICODE="0100" unicodeLower="0101" UPPER="Ā"   lower="ā"  base="a"	NAME="A_CON_LUNGA_SOPRASCRITTA"></CARATTERE>           
+	<CARATTERE UNICODE="01CD" unicodeLower="01CE" UPPER="Ǎ"   lower="ǎ"  base="a"	NAME="A_CON_PIPA"></CARATTERE>                         
+	<CARATTERE UNICODE="0226" unicodeLower="0227" UPPER="Ȧ"   lower="ȧ"  base="a"	NAME="A_CON_PUNTO_SOPRASCRITTO"></CARATTERE>           
+	<CARATTERE UNICODE="00C3" unicodeLower="00E3" UPPER="Ã"   lower="ã"  base="a"	NAME="A_CON_TILDE"></CARATTERE>                        
+	<CARATTERE UNICODE="00C4" unicodeLower="00E4" UPPER="Ä"   lower="ä"  base="a"	NAME="A_CON_UMLAUT"></CARATTERE>                       
+	<CARATTERE UNICODE="0106" unicodeLower="0107" UPPER="Ć"   lower="ć"  base="c"	NAME="C_CON_ACCENTO_ACUTO"></CARATTERE>                
+	<CARATTERE UNICODE="0108" unicodeLower="0109" UPPER="Ĉ"   lower="ĉ"  base="c"	NAME="C_CON_ACCENTO_CIRCONFLESSO"></CARATTERE>         
+	<CARATTERE UNICODE="00C7" unicodeLower="00E7" UPPER="Ç"   lower="ç"  base="c"	NAME="C_CON_CEDIGLIA"></CARATTERE>                     
+	<CARATTERE UNICODE="010C" unicodeLower="010D" UPPER="Č"   lower="č"  base="c"	NAME="C_CON_PIPA"></CARATTERE>                         
+	<CARATTERE UNICODE="010A" unicodeLower="010B" UPPER="Ċ"   lower="ċ"  base="c"	NAME="C_CON_PUNTO_SOPRASCRITTO"></CARATTERE>           
+	<CARATTERE UNICODE="010E" unicodeLower="010f" UPPER="Ď"   lower="ď"  base="c"	NAME="D_CON_PIPA"></CARATTERE>                         
+	<CARATTERE UNICODE="1E0c" unicodeLower="1E0D" UPPER="Ḍ"   lower="ḍ" base="d" NAME="D_CON_PUNTO_SOTTOSCRITTO"></CARATTERE> 
+	<CARATTERE UNICODE="1E0E" unicodeLower="1E0F" UPPER="Ḏ"  lower="ḏ" base="d"	NAME="D_CON_SOTTOLINEATURA"></CARATTERE>               
+	<CARATTERE UNICODE="0110" unicodeLower="0111" UPPER="Đ"   lower="đ"  base="d"	NAME="D_TAGLIATA"></CARATTERE>                         
+	<CARATTERE UNICODE="014A" unicodeLower="014B" UPPER="Ŋ"   lower="ŋ"  base="n"	NAME="ENG_MAIUSCOLO"></CARATTERE>                                
+	<CARATTERE UNICODE="00C9" unicodeLower="00E9" UPPER="É"   lower="é"  base="e"	NAME="E_CON_ACCENTO_ACUTO"></CARATTERE>                
+	<CARATTERE UNICODE="00CA" unicodeLower="00EA" UPPER="Ê"   lower="ê"  base="e"	NAME="E_CON_ACCENTO_CIRCONFLESSO"></CARATTERE>         
+	<CARATTERE UNICODE="00C8" unicodeLower="00E8" UPPER="È"   lower="è"  base="e"	NAME="E_CON_ACCENTO_GRAVE"></CARATTERE>                
+	<CARATTERE UNICODE="0114" unicodeLower="0115" UPPER="Ĕ"   lower="ĕ"  base="e"	NAME="E_CON_BREVE_SOPRASCRITTA"></CARATTERE>           
+	<CARATTERE UNICODE="00CB" unicodeLower="00EB" UPPER="Ë"   lower="ë"  base="e"	NAME="E_CON_DIERESI"></CARATTERE>                      
+	<CARATTERE UNICODE="0118" unicodeLower="0119" UPPER="Ę"   lower="ę"  base="e"	NAME="E_CON_GANCIO_A_DESTRA"></CARATTERE>              
+	<CARATTERE UNICODE="0112" unicodeLower="0113" UPPER="Ē"   lower="ē"  base="e"	NAME="E_CON_LUNGA_SOPRASCRITTA"></CARATTERE>           
+	<CARATTERE UNICODE="011A" unicodeLower="011B" UPPER="Ě"   lower="ě"  base="e"	NAME="E_CON_PIPA"></CARATTERE>                         
+	<CARATTERE UNICODE="0116" unicodeLower="0117" UPPER="Ė"   lower="ė"  base="e"	NAME="E_CON_PUNTO_SOPRASCRITTO"></CARATTERE>           
+	<CARATTERE UNICODE="00CB" unicodeLower="00EB" UPPER="Ë"   lower="ë"  base="e"	NAME="E_CON_UMLAUT"></CARATTERE>                       
+	<CARATTERE UNICODE="1E1E" unicodeLower="1E1F" UPPER="Ḟ"  lower="ḟ" base="f"	NAME="F_CON_PUNTO_SOPRASCRITTO"></CARATTERE>           
+	<CARATTERE UNICODE="01f4" unicodeLower="01F5" UPPER="Ǵ"   lower="ǵ"  base="g"	NAME="G_CON_ACCENTO_ACUTO"></CARATTERE> 
+	<CARATTERE UNICODE="011C" unicodeLower="011D" UPPER="Ĝ"   lower="ĝ"  base="g"	NAME="G_CON_ACCENTO_CIRCONFLESSO"></CARATTERE>         
+	<CARATTERE UNICODE="011E" unicodeLower="011F" UPPER="Ğ"   lower="ğ"  base="g"	NAME="G_CON_BREVE_SOPRASCRITTA"></CARATTERE>           
+	<CARATTERE UNICODE="0122" unicodeLower="0123" UPPER="Ģ"   lower="ģ"  base="g"	NAME="G_CON_CEDIGLIA"></CARATTERE>                     
+	<CARATTERE UNICODE="1E20" unicodeLower="1E21" UPPER="Ḡ"  lower="ḡ" base="g"	NAME="G_CON_LUNGA_SOPRASCRITTA"></CARATTERE>           
+	<CARATTERE UNICODE="01E6" unicodeLower="01E7" UPPER="Ǧ"   lower="ǧ"  base="g"	NAME="G_CON_PIPA"></CARATTERE>                         
+	<CARATTERE UNICODE="0120" unicodeLower="0121" UPPER="Ġ"   lower="ġ"  base="g"	NAME="G_CON_PUNTO_SOPRASCRITTO"></CARATTERE>           
+	<CARATTERE UNICODE="0124" unicodeLower="0125" UPPER="Ĥ"   lower="ĥ"  base="h"	NAME="H_CON_ACCENTO_CIRCONFLESSO"></CARATTERE>         
+	<CARATTERE UNICODE="1E2A" unicodeLower="1E2B" UPPER="Ḫ"  lower="ḫ" base="h"	NAME="H_CON_BREVE_SOTTOSCRITTA"></CARATTERE>           
+	<CARATTERE UNICODE="1E24" unicodeLower="1E25" UPPER="Ḥ"  lower="ḥ" base="h"	NAME="H_CON_PUNTO_SOTTOSCRITTO"></CARATTERE>           
+	<CARATTERE UNICODE="1E96" unicodeLower="1E96" UPPER="ẖ"  lower="ẖ" base="h"	NAME="H_CON_SOTTOLINEATURA"></CARATTERE> 
+	<CARATTERE UNICODE="0126" unicodeLower="0127" UPPER="Ħ"   lower="ħ"  base="h"	NAME="H_TAGLIATA"></CARATTERE>                         
+	<CARATTERE UNICODE="0132" unicodeLower="0133" UPPER="Ĳ"   lower="ĳ"  base="ij" NAME="IJ_OLANDESE"></CARATTERE>                        
+	<CARATTERE UNICODE="00CD" unicodeLower="00ED" UPPER="Í"   lower="í"  base="i"	NAME="I_CON_ACCENTO_ACUTO"></CARATTERE>                
+	<CARATTERE UNICODE="00CE" unicodeLower="00EE" UPPER="Î"   lower="î"  base="i"	NAME="I_CON_ACCENTO_CIRCONFLESSO"></CARATTERE>         
+	<CARATTERE UNICODE="00CC" unicodeLower="00EC" UPPER="Ì"   lower="ì"  base="i"	NAME="I_CON_ACCENTO_GRAVE"></CARATTERE>                
+	<CARATTERE UNICODE="012C" unicodeLower="012D" UPPER="Ĭ"   lower="ĭ"  base="i"	NAME="I_CON_BREVE_SOPRASCRITTA"></CARATTERE>           
+	<CARATTERE UNICODE="00CF" unicodeLower="00EF" UPPER="Ï"   lower="ï"  base="i"	NAME="I_CON_DIERESI"></CARATTERE>                      
+	<CARATTERE UNICODE="012E" unicodeLower="012F" UPPER="Į"   lower="į"  base="i"	NAME="I_CON_GANCIO_A_DESTRA"></CARATTERE>              
+	<CARATTERE UNICODE="012A" unicodeLower="012B" UPPER="Ī"   lower="ī"  base="i"	NAME="I_CON_LUNGA_SOPRASCRITTA"></CARATTERE>           
+	<CARATTERE UNICODE="012A" unicodeLower="012B" UPPER="Ī"   lower="ī"  base="i"	NAME="I_CON_LUNGA_SOPRASCRITTA-SBL"></CARATTERE>       
+	<CARATTERE UNICODE="01CF" unicodeLower="01D0" UPPER="Ǐ"   lower="ǐ" base="i" 	NAME="I_CON_PIPA"></CARATTERE>                         
+	<CARATTERE UNICODE="0130" unicodeLower="0130" UPPER="İ"   lower="İ"  base="i"	NAME="I_CON_PUNTO_SOPRASCRITTO"></CARATTERE>           
+	<CARATTERE UNICODE="0128" unicodeLower="0131" UPPER="Ĩ"   lower="ĩ"  base="i"	NAME="I_CON_TILDE"></CARATTERE>                        
+	<CARATTERE UNICODE="0135" unicodeLower="0135" UPPER="ı"   lower="ı"  base="i"	NAME="I_TURCA"></CARATTERE> 
+	<CARATTERE UNICODE="0134" unicodeLower="1E31" UPPER="Ĵ"   lower="ĵ"  base="j"	NAME="J_CON_ACCENTO_CIRCONFLESSO"></CARATTERE>         
+	<CARATTERE UNICODE="1E30" unicodeLower="0137" UPPER="Ḱ"  lower="ḱ" base="k"	NAME="K_CON_ACCENTO_ACUTO"></CARATTERE>                
+	<CARATTERE UNICODE="0136" unicodeLower="01E9" UPPER="Ķ"   lower="ķ"  base="k"	NAME="K_CON_CEDIGLIA"></CARATTERE>                     
+	<CARATTERE UNICODE="01E8" unicodeLower="1E35" UPPER="Ǩ"   lower="ǩ"  base="k"	NAME="K_CON_PIPA"></CARATTERE>                         
+	<CARATTERE UNICODE="1E34" unicodeLower="013A" UPPER="Ḵ"  lower="ḵ" base="k"	NAME="K_CON_SOTTOLINEATURA"></CARATTERE>               
+	<CARATTERE UNICODE="0139" unicodeLower="013C" UPPER="Ĺ"   lower="ĺ"  base="l"	NAME="L_CON_ACCENTO_ACUTO"></CARATTERE>                
+	<CARATTERE UNICODE="013B" unicodeLower="E011" UPPER="Ļ"   lower="ļ"  base="l"	NAME="L_CON_CEDIGLIA"></CARATTERE>                     
+	<CARATTERE UNICODE="013D" unicodeLower="013E" UPPER="Ľ"   lower="ľ"  base="l"	NAME="L_CON_PIPA"></CARATTERE>                         
+	<CARATTERE UNICODE="013F" unicodeLower="E011" UPPER="Ŀ"   lower="ŀ"  base="l"	NAME="L_CON_PUNTO"></CARATTERE>                        
+	<CARATTERE UNICODE="0141" unicodeLower="1E3F" UPPER="Ł"   lower="ł"  base="l"	NAME="L_TAGLIATA"></CARATTERE>                         
+	<CARATTERE UNICODE="1E3E" unicodeLower="1E43" UPPER="Ḿ"  lower="ḿ" base="m"	NAME="M_CON_ACCENTO_ACUTO"></CARATTERE>                
+	<CARATTERE UNICODE="00C6" unicodeLower="00E6" UPPER="Æ"   lower="æ"  base="ae"	NAME="NESSO_AE_MAIUSCOLO"></CARATTERE>                           
+	<CARATTERE UNICODE="0152" unicodeLower="0153" UPPER="Œ"   lower="œ"  base="oe"	NAME="NESSO_OE_MAIUSCOLO"></CARATTERE>                           
+	<CARATTERE UNICODE="0143" unicodeLower="0144" UPPER="Ń"   lower="ń"  base="n"	NAME="N_CON_ACCENTO_ACUTO"></CARATTERE>                
+	<CARATTERE UNICODE="0149" unicodeLower="0149" UPPER="ŉ"   lower="ŉ"  base="n"	NAME="N_CON_APOSTROFO"></CARATTERE> 
+	<CARATTERE UNICODE="0145" unicodeLower="0146" UPPER="Ņ"   lower="ņ"  base="n"	NAME="N_CON_CEDIGLIA"></CARATTERE>                     
+	<CARATTERE UNICODE="0147" unicodeLower="0148" UPPER="Ň"   lower="ň"  base="n"	NAME="N_CON_PIPA"></CARATTERE>                         
+	<CARATTERE UNICODE="1E44" unicodeLower="1E45" UPPER="Ṅ"   lower="ṅ" base="n" NAME="N_CON_PUNTO_SOPRASCRITTO"></CARATTERE> 
+	<CARATTERE UNICODE="1E46" unicodeLower="1E47" UPPER="Ṇ"   lower="ṇ" base="n" NAME="N_CON_PUNTO_SOTTOSCRITTO"></CARATTERE> 
+	<CARATTERE UNICODE="00D1" unicodeLower="00F1" UPPER="Ñ"   lower="ñ"  base="n"	NAME="N_CON_TILDE"></CARATTERE>                        
+	<CARATTERE UNICODE="00D3" unicodeLower="00F3" UPPER="Ó"   lower="ó"  base="o"	NAME="O_CON_ACCENTO_ACUTO"></CARATTERE>                
+	<CARATTERE UNICODE="00D4" unicodeLower="00F4" UPPER="Ô"   lower="ô"  base="o"	NAME="O_CON_ACCENTO_CIRCONFLESSO"></CARATTERE>         
+	<CARATTERE UNICODE="00D2" unicodeLower="00F2" UPPER="Ò"   lower="ò"  base="o"	NAME="O_CON_ACCENTO_GRAVE"></CARATTERE>                
+	<CARATTERE UNICODE="014E" unicodeLower="014F" UPPER="Ŏ"   lower="ŏ"  base="o"	NAME="O_CON_BREVE_SOPRASCRITTA"></CARATTERE>           
+	<CARATTERE UNICODE="00D6" unicodeLower="00F6" UPPER="Ö"   lower="ö"  base="o"	NAME="O_CON_DIERESI"></CARATTERE>                      
+	<CARATTERE UNICODE="0150" unicodeLower="0151" UPPER="Ő"   lower="ő"  base="o"	NAME="O_CON_DOPPIO_ACCENTO_ACUTO"></CARATTERE>         
+	<CARATTERE UNICODE="014C" unicodeLower="014D" UPPER="Ō"   lower="ō"  base="o"	NAME="O_CON_LUNGA_SOPRASCRITTA"></CARATTERE>           
+	<CARATTERE UNICODE="00D5" unicodeLower="00F5" UPPER="Õ"   lower="õ"  base="o"	NAME="O_CON_TILDE"></CARATTERE>                        
+	<CARATTERE UNICODE="00D6" unicodeLower="00F6" UPPER="Ö"   lower="ö"  base="o"	NAME="O_CON_UMLAUT"></CARATTERE>                       
+	<CARATTERE UNICODE="00D8" unicodeLower="00F8" UPPER="Ø"   lower="ø"  base="o"	NAME="O_TAGLIATA"></CARATTERE>                         
+	<CARATTERE UNICODE="1E54" unicodeLower="1E55" UPPER="Ṕ"  lower="ṕ" base="p"	NAME="P_CON_ACCENTO_ACUTO"></CARATTERE>                
+	<CARATTERE UNICODE="0154" unicodeLower="0155" UPPER="Ŕ"   lower="ŕ"  base="r"	NAME="R_CON_ACCENTO_ACUTO"></CARATTERE>                
+	<CARATTERE UNICODE="0156" unicodeLower="0157" UPPER="Ŗ"   lower="ŗ"  base="r"	NAME="R_CON_CEDIGLIA"></CARATTERE>                     
+	<CARATTERE UNICODE="0158" unicodeLower="0159" UPPER="Ř"   lower="ř"  base="r"	NAME="R_CON_PIPA"></CARATTERE>                         
+	<CARATTERE UNICODE="1E5a" unicodeLower="1E5B" UPPER="Ṛ"  lower="ṛ" base="r"	NAME="R_CON_PUNTO_SOTTOSCRITTO"></CARATTERE>	
+	<CARATTERE UNICODE="015A" unicodeLower="015D" UPPER="Ś"   lower="ś"  base="s"	NAME="S_CON_ACCENTO_ACUTO"></CARATTERE>                
+	<CARATTERE UNICODE="015C" unicodeLower="015F" UPPER="Ŝ"   lower="ŝ"  base="s"	NAME="S_CON_ACCENTO_CIRCONFLESSO"></CARATTERE>         
+	<CARATTERE UNICODE="015E" unicodeLower="015f" UPPER="Ş"   lower="ş"  base="s"	NAME="S_CON_CEDIGLIA"></CARATTERE>                     
+	<CARATTERE UNICODE="0282" unicodeLower="0282" UPPER="ʂ"   lower="ʂ"  base="s"	NAME="S_CON_GANCIO_A_SINISTRA"></CARATTERE> 
+	<CARATTERE UNICODE="0160" unicodeLower="1E63" UPPER="Š"   lower="š"  base="s"	NAME="S_CON_PIPA"></CARATTERE>                         
+	<CARATTERE UNICODE="1E62" unicodeLower="00FE" UPPER="Ṣ"  lower="ṣ" base="s"	NAME="S_CON_PUNTO_SOTTOSCRITTO"></CARATTERE>           
+	<CARATTERE UNICODE="00DE" unicodeLower="" UPPER="Þ"       lower="þ"  base="b" NAME="THORN_MAIUSCOLO"></CARATTERE>                              
+	<CARATTERE UNICODE="01AC" unicodeLower="01AD" UPPER="Ƭ"   lower="ƭ"  base="t"	NAME="T_CON_GANCIO_A_SINISTRA"></CARATTERE>            
+	<CARATTERE UNICODE="0164" unicodeLower="0165" UPPER="Ť"   lower="ť"  base="t"	NAME="T_CON_PIPA"></CARATTERE>                         
+	<CARATTERE UNICODE="1E6C" unicodeLower="" UPPER="Ṭ"  	   lower="ṭ" base="t" NAME="T_CON_PUNTO_SOTTOSCRITTO"></CARATTERE>           
+	<CARATTERE UNICODE="1E6E" unicodeLower="0167" UPPER="Ṯ"  lower="ṯ" base="t" NAME="T_CON_SOTTOLINEATURA"></CARATTERE>               
+	<CARATTERE UNICODE="0166" unicodeLower="00FB" UPPER="Ŧ"   lower="ŧ"  base="t"	NAME="T_TAGLIATA"></CARATTERE>                         
+	<CARATTERE UNICODE="00DA" unicodeLower="00F9" UPPER="Ú"   lower="ú"  base="u"	NAME="U_CON_ACCENTO_ACUTO"></CARATTERE>                
+	<CARATTERE UNICODE="00DB" unicodeLower="016D" UPPER="Û"   lower="û"  base="u"	NAME="U_CON_ACCENTO_CIRCONFLESSO"></CARATTERE>         
+	<CARATTERE UNICODE="00D9" unicodeLower="016F" UPPER="Ù"   lower="ù"  base="u"	NAME="U_CON_ACCENTO_GRAVE"></CARATTERE>                
+	<CARATTERE UNICODE="016C" unicodeLower="00FC" UPPER="Ŭ"   lower="ŭ"  base="u"	NAME="U_CON_BREVE_SOPRASCRITTA"></CARATTERE>           
+	<CARATTERE UNICODE="016E" unicodeLower="0171" UPPER="Ů"   lower="ů"  base="u"	NAME="U_CON_CIRCOLETTO_SOPRASCRITTO"></CARATTERE>      
+	<CARATTERE UNICODE="00DC" unicodeLower="0173" UPPER="Ü"   lower="ü"  base="u"	NAME="U_CON_DIERESI"></CARATTERE>                      
+	<CARATTERE UNICODE="0170" unicodeLower="016B" UPPER="Ű"   lower="ű"  base="u"	NAME="U_CON_DOPPIO_ACCENTO_ACUTO"></CARATTERE>         
+	<CARATTERE UNICODE="0172" unicodeLower="0169" UPPER="Ų"   lower="ų"  base="u"	NAME="U_CON_GANCIO_A_DESTRA"></CARATTERE>              
+	<CARATTERE UNICODE="016A" unicodeLower="00FC" UPPER="Ū"   lower="ū"  base="u"	NAME="U_CON_LUNGA_SOPRASCRITTA"></CARATTERE>           
+	<CARATTERE UNICODE="0168" unicodeLower="1E83" UPPER="Ũ"   lower="ũ"  base="u"	NAME="U_CON_TILDE"></CARATTERE>                        
+	<CARATTERE UNICODE="00DC" unicodeLower="0175" UPPER="Ü"   lower="ü"  base="u"	NAME="U_CON_UMLAUT"></CARATTERE>                       
+	<CARATTERE UNICODE="1E82" unicodeLower="00FD" UPPER="Ẃ"  lower="ẃ" base="w"	NAME="W_CON_ACCENTO_ACUTO"></CARATTERE>                
+	<CARATTERE UNICODE="0174" unicodeLower="0177" UPPER="Ŵ"   lower="ŵ"  base="w"	NAME="W_CON_ACCENTO_CIRCONFLESSO"></CARATTERE>         
+	<CARATTERE UNICODE="00DD" unicodeLower="00FF" UPPER="Ý"   lower="ý"  base="y"	NAME="Y_CON_ACCENTO_ACUTO"></CARATTERE>                
+	<CARATTERE UNICODE="0176" unicodeLower="1E8F" UPPER="Ŷ"   lower="ŷ"  base="y"	NAME="Y_CON_ACCENTO_CIRCONFLESSO"></CARATTERE>         
+	<CARATTERE UNICODE="0178" unicodeLower="00FF" UPPER="Ÿ"   lower="ÿ"  base="y"	NAME="Y_CON_DIERESI"></CARATTERE>                      
+	<CARATTERE UNICODE="1E8E" unicodeLower="017A" UPPER="Ẏ"  lower="ẏ" base="y"	NAME="Y_CON_PUNTO_SOPRASCRITTO"></CARATTERE>           
+	<CARATTERE UNICODE="0178" unicodeLower="017E" UPPER="Ÿ"   lower="ÿ"  base="y"	NAME="Y_CON_UMLAUT"></CARATTERE>                       
+	<CARATTERE UNICODE="0179" unicodeLower="017C" UPPER="Ź"   lower="ź"  base="z"	NAME="Z_CON_ACCENTO_ACUTO"></CARATTERE>                
+	<CARATTERE UNICODE="017D" unicodeLower="1E93" UPPER="Ž"   lower="ž"  base="z"	NAME="Z_CON_PIPA"></CARATTERE>                         
+	<CARATTERE UNICODE="017B" unicodeLower="1E95" UPPER="Ż"   lower="ż"  base="z"	NAME="Z_CON_PUNTO_SOPRASCRITTO"></CARATTERE>           
+	<CARATTERE UNICODE="1E92" unicodeLower=""     UPPER="Ẓ"  lower="ẓ" base="z"	NAME="Z_CON_PUNTO_SOTTOSCRITTO"></CARATTERE>           
+	<CARATTERE UNICODE="1E94" unicodeLower=""     UPPER="Ẕ"  lower="ẕ" base="z"	NAME="Z_CON_SOTTOLINEATURA"></CARATTERE>               
+
+
+
+	
+<!-- Alfabeto greco MAIUSCOLO -->
+	<CARATTERE UNICODE="0391" UPPER="Α"   unicodeLower="03B1" lower="α"   	NAME="ALFA "></CARATTERE>
+	<CARATTERE UNICODE="0392" UPPER="Β"   unicodeLower="03B2" lower="β"   	NAME="BETA "></CARATTERE>
+	<CARATTERE UNICODE="0393" UPPER="Γ"   unicodeLower="03B3" lower="γ"   	NAME="GAMMA "></CARATTERE>
+	<CARATTERE UNICODE="0394" UPPER="Δ"   unicodeLower="03B4" lower="δ"   	NAME="DELA "></CARATTERE>
+	<CARATTERE UNICODE="0395" UPPER="Ε"   unicodeLower="03B5" lower="ε"   	NAME="EPSILON "></CARATTERE>
+	<CARATTERE UNICODE="03DA" UPPER="Ϛ"   unicodeLower="03DB" lower="ϛ"   	NAME="STIGMA "></CARATTERE>
+	<CARATTERE UNICODE="03DC" UPPER="Ϝ"   unicodeLower="03DD" lower="ϝ"   	NAME="DIGAMMA "></CARATTERE>
+	<CARATTERE UNICODE="0396" UPPER="Ζ"   unicodeLower="03B6" lower="ζ"   	NAME="ZETA "></CARATTERE>
+	<CARATTERE UNICODE="0397" UPPER="Η"   unicodeLower="03B7" lower="η"   	NAME="ETA "></CARATTERE>
+	<CARATTERE UNICODE="0398" UPPER="Θ"   unicodeLower="03B8" lower="θ"   	NAME="TETA "></CARATTERE>
+	<CARATTERE UNICODE="0399" UPPER="Ι"   unicodeLower="03B9" lower="ι"   	NAME="IOTA "></CARATTERE>
+	<CARATTERE UNICODE="039A" UPPER="Κ"   unicodeLower="03BA" lower="κ"   	NAME="KAPPA "></CARATTERE>
+	<CARATTERE UNICODE="039B" UPPER="Λ"   unicodeLower="03BB" lower="λ"   	NAME="LAMBDA "></CARATTERE>
+	<CARATTERE UNICODE="039C" UPPER="Μ"   unicodeLower="03BC" lower="μ"   	NAME="MI "></CARATTERE>
+	<CARATTERE UNICODE="039D" UPPER="Ν"   unicodeLower="03BD" lower="ν"   	NAME="NI "></CARATTERE>
+	<CARATTERE UNICODE="039E" UPPER="Ξ"   unicodeLower="03BE" lower="ξ"   	NAME="XI "></CARATTERE>
+	<CARATTERE UNICODE="039F" UPPER="Ο"   unicodeLower="03BF" lower="ο"   	NAME="OMICRON "></CARATTERE>
+	<CARATTERE UNICODE="03A0" UPPER="Π"   unicodeLower="03C0" lower="π"   	NAME="PI GRECO "></CARATTERE>
+	<CARATTERE UNICODE="03A1" UPPER="Ρ"   unicodeLower="03C1" lower="ρ"   	NAME="RO "></CARATTERE>
+	<CARATTERE UNICODE="03A3" UPPER="Σ"   unicodeLower="03C3" lower="σ"   	NAME="SIGMA "></CARATTERE>
+	<CARATTERE UNICODE="03A4" UPPER="Τ"   unicodeLower="03c4" lower="τ"  	NAME="TAU "></CARATTERE>
+	<CARATTERE UNICODE="03A5" UPPER="Υ"   unicodeLower="03c5" lower="υ"   	NAME="UPSILON "></CARATTERE>
+	<CARATTERE UNICODE="03A6" UPPER="Φ"   unicodeLower="03C6" lower="φ"   	NAME="FI "></CARATTERE>
+	<CARATTERE UNICODE="03A7" UPPER="Χ"   unicodeLower="03C4" lower="χ"   	NAME="CHI "></CARATTERE>
+	<CARATTERE UNICODE="03a8" UPPER="Ψ"	  unicodeLower="03C8" lower="ψ" NAME="PSI" ></CARATTERE>
+	<CARATTERE UNICODE="03A9" UPPER="Ω"   unicodeLower="03C9" lower="ω"   	NAME="OMEGA "></CARATTERE>
+
+	       
+<!-- Numeri sottoscritti -->
+	<CARATTERE UNICODE="2080" UPPER="₀"  unicodeLower="2080" lower="₀"  	NAME="ZERO SOTTOSCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2081" UPPER="₁"  unicodeLower="2081" lower="₁"  	NAME="UNO SOTTOSCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2082" UPPER="₂"  unicodeLower="2082" lower="₂"  	NAME="DUE SOTTOSCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2083" UPPER="₃"  unicodeLower="2083" lower="₃"  	NAME="TRE SOTTOSCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2084" UPPER="₄"  unicodeLower="2084" lower="₄"  	NAME="QUATTRO SOTTOSCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2085" UPPER="₅"  unicodeLower="2085" lower="₅"  	NAME="CINQUE SOTTOSCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2086" UPPER="₆"  unicodeLower="2086" lower="₆"  	NAME="SEI SOTTOSCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2087" UPPER="₇"  unicodeLower="2087" lower="₇"  	NAME="SETTE SOTTOSCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2088" UPPER="₈"  unicodeLower="2088" lower="₈"  	NAME="OTTO SOTTOSCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2089" UPPER="₉"  unicodeLower="2089" lower="₉"  	NAME="NOVE SOTTOSCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2070" UPPER="⁰"  unicodeLower="2070" lower="⁰"  	NAME="ZERO SOPRASCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2071" UPPER="ⁱ"  unicodeLower="2071" lower="ⁱ"  	NAME="UNO SOPRASCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2072" UPPER="⁲"  unicodeLower="2072" lower="⁲"  	NAME="DUE SOPRASCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2073" UPPER="⁳"  unicodeLower="2073" lower="⁳"  	NAME="TRES OPRASCRITTO "></CARATTERE>
+	<CARATTERE UNICODE="2074" UPPER="⁴"  unicodeLower="2074" lower="⁴"  	NAME="QUATTRO SOPRASCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2075" UPPER="⁵"  unicodeLower="2075" lower="⁵"  	NAME="CINQUE SOPRASCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2076" UPPER="⁶"  unicodeLower="2076" lower="⁶"  	NAME="SEI SOPRASCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2077" UPPER="⁷"  unicodeLower="2077" lower="⁷"  	NAME="SETTE SOPRASCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2078" UPPER="⁸"  unicodeLower="2078" lower="⁸"  	NAME="OTTO SOPRASCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="2079" UPPER="⁹"  unicodeLower="2079" lower="⁹"  	NAME="NOVE SOPRASCRITTO"></CARATTERE>
+
+<!-- Numeri romani -->
+	<CARATTERE UNICODE="216D" UPPER="Ⅽ"  unicodeLower="216D" lower="Ⅽ"  	NAME="100 IN NUMERI ROMANI"></CARATTERE>
+	<CARATTERE UNICODE="216E" UPPER="Ⅾ"  unicodeLower="216E" lower="Ⅾ"  	NAME="500 IN NUMERI ROMANI"></CARATTERE>
+	<CARATTERE UNICODE="2160" UPPER="Ⅰ"  unicodeLower="2160" lower="Ⅰ"  	NAME="1 IN NUMERI ROMANI"></CARATTERE>
+	<CARATTERE UNICODE="216C" UPPER="Ⅼ"  unicodeLower="216C" lower="Ⅼ"  	NAME="50 IN NUMERI ROMANI"></CARATTERE>
+	<CARATTERE UNICODE="216F" UPPER="Ⅿ"  unicodeLower="216F" lower="Ⅿ"  	NAME="1000 IN NUMERI ROMANI"></CARATTERE>
+	<CARATTERE UNICODE="2164" UPPER="Ⅴ"  unicodeLower="2164" lower="Ⅴ"  	NAME="5 IN NUMERI ROMANI"></CARATTERE>
+	<CARATTERE UNICODE="2169" UPPER="Ⅹ"  unicodeLower="2169" lower="Ⅹ"  	NAME="10 IN NUMERI ROMANI"></CARATTERE>
+
+
+<!-- Punteggiatura -->
+	<CARATTERE UNICODE="FEC9" UPPER="ﻉ"  unicodeLower="FEC9" lower="ﻉ"  	NAME="AIN"></CARATTERE>
+	<CARATTERE UNICODE="FE84" UPPER="ﺄ"  unicodeLower="FE84" lower="ﺄ"  	NAME="ALIF"></CARATTERE>
+	<CARATTERE UNICODE="266D" UPPER="♭"  unicodeLower="266D" lower="♭"  	NAME="BEMOLLE"></CARATTERE>
+	<CARATTERE UNICODE="00A2" UPPER="¢"   unicodeLower="00A2" lower="¢"   	NAME="CENT"></CARATTERE>
+	<CARATTERE UNICODE="00A9" UPPER="©"   unicodeLower="00A9" lower="©"   	NAME="COPYRIGHT"></CARATTERE>
+	<CARATTERE UNICODE="271F" UPPER="✟"  unicodeLower="271F" lower="✟"  	NAME="CROCE_DOPPIA"></CARATTERE>
+	<CARATTERE UNICODE="271D" UPPER="✝"  unicodeLower="271D" lower="✝"  	NAME="CROCE_SEMPLICE"></CARATTERE>
+<!--	<CARATTERE UNICODE="99F7" UPPER="駷"  unicodeLower="99F7" lower="駷"  	NAME="DA_A"></CARATTERE>-->
+	<CARATTERE UNICODE="0024" UPPER="$"    unicodeLower="0024" lower="$"    	NAME="DOLLARO"></CARATTERE>
+	<CARATTERE UNICODE="00B9" UPPER="¹"   unicodeLower="00B9" lower="¹"   	NAME="ESPONENTE_1"></CARATTERE>
+	<CARATTERE UNICODE="00B2" UPPER="²"   unicodeLower="00B2" lower="²"   	NAME="ESPONENTE_2"></CARATTERE>
+	<CARATTERE UNICODE="00B3" UPPER="³"   unicodeLower="00B3" lower="³"   	NAME="ESPONENTE_3"></CARATTERE>
+	<CARATTERE UNICODE="00F0" UPPER="ð"   unicodeLower="00F0" lower="ð"   	NAME="ETH_ISLANDESE"></CARATTERE>
+	<CARATTERE UNICODE="00B0" UPPER="°"   unicodeLower="00B0" lower="°"   	NAME="GRADO"></CARATTERE>
+	<CARATTERE UNICODE="00AA" UPPER="ª"   unicodeLower="00AA" lower="ª"   	NAME="INDICATORE_DI_ORDINALE_FEMMINILE"></CARATTERE>
+	<CARATTERE UNICODE="00BA" UPPER="º"   unicodeLower="00BA" lower="º"   	NAME="INDICATORE_DI_ORDINALE_MASCHILE"></CARATTERE>
+<!--	<CARATTERE UNICODE="996B" UPPER="饫"  unicodeLower="996B" lower="饫"  	NAME="K_RIDOTTA"></CARATTERE> -->
+	<CARATTERE UNICODE="00AE" UPPER="®"   unicodeLower="00AE" lower="®"   	NAME="MARCHIO_REGISTRATO"></CARATTERE> 
+	<CARATTERE UNICODE="00B5" UPPER="µ"   unicodeLower="00B5" lower="µ"   	NAME="MICRON"></CARATTERE>
+	<CARATTERE UNICODE="00D7" UPPER="×"   unicodeLower="00D7" lower="×"   	NAME="MOLTIPLICATO"></CARATTERE>
+	<CARATTERE UNICODE="0669" UPPER="٩"   unicodeLower="0669" lower="٩"   	NAME="NOTA_DI_MUSICA"></CARATTERE>
+	<CARATTERE UNICODE="2126" UPPER="Ω"  unicodeLower="2126" lower="Ω"  	NAME="OHM"></CARATTERE>
+	<CARATTERE UNICODE="00A7" UPPER="§"   unicodeLower="00A7" lower="§"   	NAME="PARAGRAFO"></CARATTERE>
+	<CARATTERE UNICODE="2117" UPPER="℗"  unicodeLower="2117" lower="℗"  	NAME="PHONOGRAPHE"></CARATTERE>
+	<CARATTERE UNICODE="00B1" UPPER="±"   unicodeLower="00B1" lower="±"   	NAME="PIU_MENO"></CARATTERE>
+	<CARATTERE UNICODE="00B9" UPPER="¹"   unicodeLower="00B9" lower="¹"   	NAME="PRIMO_SOPRASCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="00A1" UPPER="¡"   unicodeLower="00A1" lower="¡"   	NAME="PUNTO_ESCLAMATIVO_ROVESCIATO"></CARATTERE>
+	<CARATTERE UNICODE="00BF" UPPER="¿"   unicodeLower="00BF" lower="¿"   	NAME="PUNTO_INTERROGATIVO_ROVESCIATO"></CARATTERE>
+	<CARATTERE UNICODE="00B7" UPPER="·"   unicodeLower="00B7" lower="·"   	NAME="PUNTO_IN_MEZZO_CATALANO"></CARATTERE>
+	<CARATTERE UNICODE="00B7" UPPER="·"   unicodeLower="00B7" lower="·"   	NAME="PUNTO_IN_MEZZO_MATEMATICO"></CARATTERE>
+	<CARATTERE UNICODE="00B2" UPPER="²"   unicodeLower="00B2" lower="²"   	NAME="SECONDO_SOPRASCRITTO"></CARATTERE>
+	<CARATTERE UNICODE="044C" UPPER="ь"   unicodeLower="044C" lower="ь"   	NAME="SEGNO_DI_DEBOLE"></CARATTERE> 
+	<CARATTERE UNICODE="044A" UPPER="ъ"   unicodeLower="044A" lower="ъ"   	NAME="SEGNO_DI_FORTE"></CARATTERE>
+	<CARATTERE UNICODE="00B6" UPPER="¶"   unicodeLower="00B6" lower="¶"   	NAME="SEZIONE"></CARATTERE>
+	<CARATTERE UNICODE="00A3" UPPER="£"   unicodeLower="00A3" lower="£"   	NAME="STERLINA"></CARATTERE>
+	<CARATTERE UNICODE="00DF" UPPER="ß"   unicodeLower="00DF" lower="ß"   	NAME="SZ_TEDESCO"></CARATTERE>
+	<CARATTERE UNICODE="2122" UPPER="™"  unicodeLower="2122" lower="™"  	NAME="TRADE_MARK"></CARATTERE> 
+	<CARATTERE UNICODE="2018" UPPER="‘"  unicodeLower="2018" lower="‘"  	NAME="VIRGOLETTA_SOPRA_LINEA_APERTA"></CARATTERE>
+	<CARATTERE UNICODE="2019" UPPER="’"  unicodeLower="2019" lower="’"  	NAME="VIRGOLETTA_SOPRA_LINEA_CHIUSA"></CARATTERE>
+	<CARATTERE UNICODE="00AB" UPPER="«"   unicodeLower="00AB" lower="«"   	NAME="VIRGOLETTE_AD_ANGOLO_APERTE"></CARATTERE>
+	<CARATTERE UNICODE="00BB" UPPER="»"   unicodeLower="00BB" lower="»"   	NAME="VIRGOLETTE_AD_ANGOLO_CHIUSE"></CARATTERE>
+	<CARATTERE UNICODE="201A" UPPER="‚"  unicodeLower="201A" lower="‚"  	NAME="VIRGOLETTE_SOTTO_LINEA_APERTA"></CARATTERE>
+	<CARATTERE UNICODE="201E" UPPER="„"  unicodeLower="201E" lower="„"  	NAME="VIRGOLETTE_SOTTO_LINEA_APERTE"></CARATTERE>
+	<CARATTERE UNICODE="00A5" UPPER="¥"   unicodeLower="00A5" lower="¥"   	NAME="YEN"></CARATTERE>
+	</CARATTERI>                       
+</SBN>                                     
+

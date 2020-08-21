@@ -1,0 +1,27 @@
+DbUpdate tool - � Almaviva S.p.A 2011-2017
+==========================================
+Tool di aggiornamento della base dati
+Inizio esecuzione 2019-06-21 03:31:57:CEST
+File di configurazione: /media/export54/indice/dp/utility/cancellaBiblioteche/DbCancellaBiblioteche.cfg
+Elenco tabelle da trattare: /media/export54/indice/dp/utility/cancellaBiblioteche/DbCancellaBiblioteche.txt
+
+Inizio aggiornamento tb_biblioteca.upd 2019-06-21 03:31:57:CEST
+
+-------------------------
+Committing at row 1query='update tr_aut_bib set fl_canc = 'S', ute_var='CANC_BIB_BAT', ts_var=CURRENT_TIMESTAMP  where cd_polo='TER' and cd_biblioteca=' RA''
+Committing at row 1query='update tr_mar_bib set fl_canc = 'S', ute_var='CANC_BIB_BAT', ts_var=CURRENT_TIMESTAMP  where cd_polo='TER' and cd_biblioteca=' RA''Record non aggiornato per 'update tr_mar_bib set fl_canc = 'S', ute_var='CANC_BIB_BAT', ts_var=CURRENT_TIMESTAMP  where cd_polo='TER' and cd_biblioteca=' RA''
+
+Committing at row 2query='update tr_tit_bib set fl_canc = 'S', ute_var='CANC_BIB_BAT', ts_var=CURRENT_TIMESTAMP where cd_polo='TER' and cd_biblioteca=' RA''
+Committing at row 3
+Committing at row 4query='update tb_biblioteca set fl_canc = 'S' where cd_polo='TER' and cd_biblioteca=' RA''
+Committing at row 4
+Fine aggiornamento tb_biblioteca.upd 2019-06-21 03:31:58:CEST
+
+	Record letti per tb_biblioteca.upd 4
+	Record errati per tb_biblioteca.upd 0
+	Record inseriti per tb_biblioteca.upd 0
+	Update eseguite per tb_biblioteca.upd 4
+	Record aggiornati per tb_biblioteca.upd 489
+
+Fine caricamento!
+Fine esecuzione 2019-06-21 03:31:58:CEST
