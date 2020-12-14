@@ -103,7 +103,10 @@ public class CreateRelationFile {
 	final static int RELAZIONE_LUOGO_LUOGO = 36;
 	final static int RELAZIONE_LUOGO_LUOGO_INV = 37;
 
-	
+
+		//24/11/2020
+	final static int RELAZIONE_IDSBN_IDALTRI_INDICE = 38;
+	final static int RELAZIONE_IDSBN_IDALTRI_INV_INDICE = 39;
 	
 	
 	boolean usingOffsets = false;
@@ -117,7 +120,7 @@ public class CreateRelationFile {
 
 	int relazione;
 	String savedSourceId="";
-	String tipoLegame, tipoLegameMusica, cdNaturaBase, cdNaturaColl, sequenza, tpLuogo;
+	String tipoLegame, tipoLegameMusica, cdNaturaBase, cdNaturaColl, sequenza, tpLuogo,codicePolo,codiceBib;
 	String tpResponsabilita, cdRelazione, flIncerto, flSuperfluo,  cdStrumentoMusicale;
 	String cdBiblioteca;
 	String sourceId, targetId, targetPolo, targetBiblioteca;
@@ -170,6 +173,13 @@ else if (relazione == RELAZIONE_LUOGO_LUOGO_INDICE || relazione == RELAZIONE_LUO
 {
 	creaRelazioneLuoLuoIndice(ar);
 	out.write(sourceId + "|" + targetId +','+ tipoLegame);  
+	savedSourceId = sourceId;
+}
+			
+else if (relazione == RELAZIONE_IDSBN_IDALTRI_INDICE || relazione == RELAZIONE_IDSBN_IDALTRI_INV_INDICE)
+{
+	creaRelazioneIdsbnIdaltriIndice(ar);
+	out.write(sourceId + "|" + targetId+','+ codicePolo+codiceBib);  
 	savedSourceId = sourceId;
 }
 			
@@ -381,6 +391,16 @@ else if (relazione == RELAZIONE_LUOGO_LUOGO_INDICE || relazione == RELAZIONE_LUO
 		savedSourceId=sourceId;
 	}
 	out.write("|" + targetId +',' + tipoLegame); 
+}
+else if (relazione == RELAZIONE_IDSBN_IDALTRI_INDICE || relazione == RELAZIONE_IDSBN_IDALTRI_INV_INDICE)
+{
+	creaRelazioneIdsbnIdaltriIndice(ar);
+	if (!sourceId.equals(savedSourceId))
+	{
+		out.write("\n" + sourceId); 
+		savedSourceId=sourceId;
+	}
+	out.write("|" + targetId+','+codicePolo+codiceBib); 
 }
 					
 					
@@ -733,6 +753,14 @@ void 	creaRelazioneLuoLuoIndice(String ar[])
 	tipoLegame = ar[2];
 }
 
+void 	creaRelazioneIdsbnIdaltriIndice(String ar[])
+{
+		codicePolo=ar[0];
+		codiceBib=ar[1];
+		sourceId = ar[3];
+		targetId = ar[4].trim();
+}
+
 
 
 void 	creaRelazioneTitAut(String ar[])
@@ -1065,6 +1093,11 @@ public static void main(String args[])
     	else
     		createRelationFile.relazione = RELAZIONE_LUOGO_LUOGO;
     	
+    }
+    else if (args[0].indexOf("tr_idsbn_idaltri") != -1)
+    {
+    	if (createRelationFile.db == createRelationFile.DB_INDICE)
+    		createRelationFile.relazione = RELAZIONE_IDSBN_IDALTRI_INDICE;	
     }
 
     
@@ -1422,6 +1455,5 @@ void run(String inputFile, String outputFile, int campiInTabella, String offsetF
 
 
 } // End Create relation file
-
 
 

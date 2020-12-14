@@ -834,6 +834,16 @@ public static void main(String args[]) {
 	{
 		createOffsetFile.keyEnd = 23;
 	}
+
+
+//	else if (args[0].indexOf("tr_idsbn_idaltri") != -1 )
+	else if ((args[0].indexOf("tr_idsbn_idaltri") != -1) && !(args[0].indexOf(".rel") != -1))
+	{
+		createOffsetFile.keyStart = 18-1;
+		createOffsetFile.keyEnd = 27-1;
+	}
+	
+	
 	
 	
 //	else if (args[0].contains("tbf_biblioteca") )
