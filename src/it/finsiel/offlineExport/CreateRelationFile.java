@@ -1,5 +1,7 @@
 package it.finsiel.offlineExport;
 
+// Reicevutio da Hassan 14/12/2020
+
 /*
 Parametri per deub  
 /media/export70/indice/dp/input/tr_aut_bib.out.bytes.srt /media/export70/indice/dp/input/tr_aut_bib.out.bytes.srt.rel 1 db=indice
