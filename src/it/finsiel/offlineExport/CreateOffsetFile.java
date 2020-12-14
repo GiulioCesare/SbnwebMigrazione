@@ -4,6 +4,7 @@
 
 09/12/2010 Retrocompatibilita' con 1.4.2
 
+Prova git in eclipse 14/12/2020
 */
 package it.finsiel.offlineExport;
 
