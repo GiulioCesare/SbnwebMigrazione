@@ -240,7 +240,8 @@ private void truncateTable()
 
 		// System.out.println("inp: " + inputFile);
 
-		DbUpdateInsert dbUpdate = new DbUpdateInsert();
+//		DbUpdateInsert dbUpdate = new DbUpdateInsert();
+		DbUpdate dbUpdate = new DbUpdate();
 
 		BufferedReader inTxt;
 		String s;
@@ -391,7 +392,8 @@ private void truncateTable()
 								MiscStringTokenizer.RETURN_EMPTY_TOKENS_FALSE); // " "
 
 						dbUpdate.fileCounter++;
-						dbUpdate.updateInsert(ar[0]); // Update tabella
+//						dbUpdate.updateInsert(ar[0]); // Update tabella
+						dbUpdate.update(ar[0]); // Update tabella
 
 					}
 				} catch (IOException e) {
@@ -1105,6 +1107,8 @@ private void updateTbSoggetto2(Statement stmt, ConfigQuery configQuery) throws S
 //			continue;
 			return;
         }
+//System.out.println("Update record : " + arData[0]);
+
 		int cd_livello_indice = Integer.parseInt(rs.getString("cd_livello"));
 		String ute_var_indice = rs.getString("ute_var").substring(0,6);
 		
@@ -1191,6 +1195,10 @@ private void updateTbSoggetto2(Statement stmt, ConfigQuery configQuery) throws S
 		System.out.println("\nRecord errato alla riga " + rowCtr + ": " + sql);
 		throw new SQLException(e);
 	}
+	catch (Exception e) {
+		System.out.println("Eccezione generica Update per record : " + arData[0]);
+	}
+	
 	
 }
 

@@ -476,32 +476,40 @@ System.out.print(msg);
 					if(rs.next())
 					{
 						String fl_canc = rs.getString(2);
-						if (!fl_canc.equals("S") && rimuoviRecordVivi == false)
-							
-						{ // 17/04/2018 Non cancelliamo i record vivi!!
-							OutLog.write("Vorresti rimuovere un soggetto vivo: " + rs.getString(1) + "\n");
-							recordDaCancellareMaVivi++;
-							continue;
-						}
-						
-						
-						else if (rimuoviDipendenzeTbSoggetto(idRecord, stmt) == true)
-						{
-							// Rimuoviamo il soggetto
-						    stmt.executeUpdate("DELETE FROM tb_soggetto WHERE cid = '"+idRecord+"'");
-
-							recordCancellati++;
-						}
+						if (!fl_canc.equals("S"))
+							{
+							if  (rimuoviRecordVivi == false)
+								{ // 17/04/2018 Non cancelliamo i record vivi!!
+									OutLog.write("Vorresti rimuovere un soggetto vivo: " + rs.getString(1) + "\n");
+									recordDaCancellareMaVivi++;
+									continue;
+								}
+							else
+								{
+								OutLog.write("RIMOZIONE di un soggetto vivo! : " + rs.getString(1) + " NON IMPLEMENTATO\n");
+								}
+							}
 						else
-						{
-							msg = "\nNon e' stato possibile rimuovere le dipendenze per il record "+idRecord;
-							//System.out.println();
-							OutLog.write(msg);
+						{ // Record cancellato logicamente
+							if (rimuoviDipendenzeTbSoggetto(idRecord, stmt) == true)
+							{
+								// Rimuoviamo il soggetto
+							    stmt.executeUpdate("DELETE FROM tb_soggetto WHERE cid = '"+idRecord+"'");
+								System.out.println("Cancellato record: " + idRecord + " incluse sue dipendenze"); // 28/07/2021
+								recordCancellati++;
+							}
+							else
+							{
+								msg = "\nNon e' stato possibile rimuovere le dipendenze per il record "+idRecord;
+								//System.out.println();
+								OutLog.write(msg);
+							}							
 						}
+						
 					}
 					else
 					{
-						// System.out.println("cid "+idRecord+" non presente in indice" );
+						 System.out.println("Record "+idRecord+" non presente in indice" );
 					}
 				}
 				
@@ -511,8 +519,12 @@ System.out.print(msg);
 				if ((rows & commitOgniTotRighe) == 0) 
 				{
 					msg = "\nCommitting at row " + rows;
-System.out.print(msg);
+					System.out.print(msg);
 					OutLog.write(msg);
+
+					msg = "\nCancellati: " + recordCancellati + " record fino al committ";
+					OutLog.write(msg);
+
 					try {
 						stmt.execute("COMMIT");
 					} catch (SQLException e) {
@@ -609,4 +621,4 @@ boolean  rimuoviDipendenzeTbSoggetto(String idRecord, Statement stmt)
 	return true;
 }
 
-} // End DbDownload
+} // End RimuoviRecordConDipendenze
