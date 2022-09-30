@@ -241,12 +241,14 @@ public class MiscStringTokenizer {
 		StringBuffer sb = new StringBuffer();
 		int startPos = 0;
 		char[] cArray = text.toCharArray();
-		
+		boolean delimitatore=true;
+
 		int i;
 		for (i=0; i < cArray.length; i++)
 		{
 			int j;
 			// Cicla su tutti i delimitatori di tipo stringa
+			delimitatore=false;
 			for (j=0; j < stringDelimitersAr.length; j++)
 			{
 				int k;
@@ -259,7 +261,10 @@ public class MiscStringTokenizer {
 						break; // NO delimiter found
 				}
 				if (k == stringDelimitersAr[j].length())
+				{
+					delimitatore=true;
 					break; // Trovato delimitatore
+				}
 				// Continua a cercare
 			}
 			
@@ -293,6 +298,16 @@ public class MiscStringTokenizer {
 		
 		if (startPos != i )	
 			tokenVect.add(new String (text.substring(startPos))); // Save token
+		else{
+			if (delimitatore == true)
+				{
+					tokenVect.add(new String ("")); // ultimo campo vuoto
+				}
+			
+
+		}
+
+
 	} // End splitStringSeparatedTokens
 
 	/**

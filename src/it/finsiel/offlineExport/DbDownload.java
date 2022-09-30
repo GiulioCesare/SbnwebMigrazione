@@ -305,6 +305,19 @@ System.out.println("args: " + args.length);
 			}
 			return;
 			}
+//++++		
+System.out.println("QUERY command:");
+System.out.println("	query=");
+System.out.println("	\"@query_*=");
+System.out.println("	lunghezze=");
+System.out.println("	chiudiConSeparatore=");
+System.out.println("	trim=");
+System.out.println("	leftPad=");
+System.out.println("	rightPad=");
+System.out.println("	output=");
+System.out.println("	$parameter_name$ (parameter substitution: eg. data=30/10/1859 (declared in command line))");
+
+
 		
 		// Esegui trattamento delle singole tabelle
 			// ----------------------------------------
@@ -811,7 +824,8 @@ byte[] fieldByteBuffer = new byte[1000];
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			if ((rows & progress) == progress)
+//			if ((rows & progress) == progress)
+			if ((rows % progress) == 0) 
 				System.out.println("Fatti: " + rows + " records");
 		}
 		stmt.close();

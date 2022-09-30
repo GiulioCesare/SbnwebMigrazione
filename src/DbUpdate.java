@@ -21,6 +21,9 @@ import it.finsiel.misc.*;
 
 import org.xml.sax.SAXException;
 
+
+
+
 /*
  class ConfigTable {
  String tableName;
@@ -214,12 +217,44 @@ private void truncateTable()
 	// }
 	// }
 }
+
+
+static void test()
+{
+	String stringSepDiCampoInArray[] = { "&$%" }; 
+	stringSepDiCampoInArray[0] = "|";
+
+	String arTipi[] = {"s","s","s"};
+	String arData[];
 	
 
+	String data = "a|b|c";
+	
+	arData = MiscString.estraiCampi(data, // // Scomponiamo la riga dei dati in un array
+			stringSepDiCampoInArray,
+			MiscStringTokenizer.RETURN_EMPTY_TOKENS_FALSE);
+	if (arData.length != arTipi.length) {
+		System.out.println("errore tipi e campi non sono uguali");
+		
+	}
+	
+}
+
+
 	public static void main(String args[]) {
+
+//		if(true)
+//		{
+//			test();
+//			return;
+//
+//		}
+		
 		char charSepArrayEquals[] = { '=' };
 		char charSepArraySpace[] = { ' ' };
 
+		
+		
 		if (args.length < 2) {
 			System.out
 					.println("Uso: dbUpdate <config filename> <List filename>"); // <logFilename>
@@ -726,7 +761,7 @@ public void update(String filename) {
 	try {
 		stmt = con.createStatement();
 		// NO TRUNCATE SE IN AGGIORNAMENTO
-//		truncateTable();
+		// truncateTable();
 	} catch (SQLException e) {
 		e.printStackTrace();
 		log(e.getMessage()+"\n");
@@ -933,7 +968,9 @@ private void updateWithData2(ConfigQuery configQuery, BufferedReader fileIn, Str
 //				if ((rowCtr & 0x3FF) == 0) // Mettiamo ogni 1024 records
 				// if ((rowCtr & 0xF) == 0) // Mettiamo ogni 15
 					
-				if ((rowCtr & commitOgniTotRighe) == 0)	
+//				if ((rowCtr & commitOgniTotRighe) == 0)	
+//				if ((rowCtr & commitOgniTotRighe) == commitOgniTotRighe)	
+				if ((rowCtr % commitOgniTotRighe) == 0) 
 				{
 					//System.out.print("\nCommitting at row " + rowCtr);
 					log("\nCommitting at row " + rowCtr);
@@ -1012,11 +1049,7 @@ private void updateWithData2(ConfigQuery configQuery, BufferedReader fileIn, Str
 	} catch (SQLException e) {
 		e.printStackTrace();
 	}
-
-	
-	
-	
-}
+} // End updateWithData2
 
 
 

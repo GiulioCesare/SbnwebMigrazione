@@ -564,6 +564,11 @@ public class MiscString {
 		return buf.toString();
 	}
 
+	public static String[] estraiCampi(String output, String charDelimiters, boolean returnEpmtyTokens) {
+		char[] aCharDelimitersAr = charDelimiters.toCharArray();
+		return estraiCampi(output, aCharDelimitersAr, returnEpmtyTokens);
+	}
+
 	/**
 	 * Trasforma una stringa in un array di stringhe.
 	 * 

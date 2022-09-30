@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+// import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -55,6 +56,8 @@ public class DbUpload {
 	byte fieldSeparatorByte = (byte)0x7C; // 0xC0
 	String removeAllRecordsBeforeUpload="";
 	long startLoadingFrom = 1;
+	long elaboraNRighe=0;	// 11/02/2022
+	
 	String searchPath=""; // "sbnweb, pg_catalog, public;"
 	String schema="";
 	Statement stmt = null;
@@ -81,8 +84,10 @@ public class DbUpload {
 	{
 		
 		try {
-			//Class.forName("org.postgresql.Driver");
-			 Class.forName ( jdbcDriver);
+//			if (connectionUrl.contains("postgresql"))
+//				Class.forName("org.postgresql.Driver");
+//			else
+				Class.forName ( jdbcDriver);
 			
 		} catch(java.lang.ClassNotFoundException e) {
 			System.err.print("ClassNotFoundException: ");
@@ -102,13 +107,21 @@ public class DbUpload {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				if (jdbcDriver.contains("postgres"))
+
+//				if (jdbcDriver.contains("postgres"))
+//				{
+//					stmt.execute("SET search_path = "+searchPath); // sbnweb, pg_catalog, public
+//					if (setCurCfg == true)
+//						stmt.execute("select set_curcfg('default')"); // Esegui questa select per attivare gli indici testuali 
+//				}
+				
+				int pos = jdbcDriver.indexOf("postgres"); // 10/02/2022
+				if (pos  != -1)
 				{
-					stmt.execute("SET search_path = "+searchPath); // sbnweb, pg_catalog, public
+					stmt.execute("SET search_path = sbnweb, pg_catalog, public");
 					if (setCurCfg == true)
 						stmt.execute("select set_curcfg('default')"); // Esegui questa select per attivare gli indici testuali 
 				}
-				
 				
 				OutLog.write("\nOpened connection: "+connectionUrl);
 				System.out.println("\nOpened connection: "+connectionUrl);
@@ -231,7 +244,8 @@ private void upload2(ConfigQuery configQuery, BufferedReader fileIn, String file
 				
 				data = data.replace("'", "''"); // gestione di eventuali singoli apici 
 				// Scomponiamo la riga dei dati in un array 
-				arData = MiscString.estraiCampi(data, stringSepDiCampoInArray, MiscStringTokenizer.RETURN_EMPTY_TOKENS_FALSE);
+				// arData = MiscString.estraiCampi(data, stringSepDiCampoInArray, MiscStringTokenizer.RETURN_EMPTY_TOKENS_FALSE);
+				arData = MiscString.estraiCampi(data, stringSepDiCampoInArray, MiscStringTokenizer.RETURN_DELIMITERS_AS_TOKEN_FALSE);
 
 				if (   configQuery.sql.startsWith("insert into") 
 					|| configQuery.sql.startsWith("use default insert"))
@@ -276,7 +290,7 @@ private void upload2(ConfigQuery configQuery, BufferedReader fileIn, String file
 							sb.append(arData[i]);
 					}
 
-				}
+				} // End use default insert
 				else if (   configQuery.sql.startsWith("use parametric insert"))
 				{
 					sql = configQuery.sql;							
@@ -304,7 +318,7 @@ private void upload2(ConfigQuery configQuery, BufferedReader fileIn, String file
 							sql = sql.replace("?"+paramId, arData[paramId]);
 							
 					}
-				}
+				} // End use parametric insert
 				else
 				{
 					String l = "\n\tInvalid insert type  per tabella "+ tableName;
@@ -319,17 +333,38 @@ private void upload2(ConfigQuery configQuery, BufferedReader fileIn, String file
 					continue;
 					
 				}
+
+//				
+//ResultSet rs;
+//try {
+//	rs = con.getMetaData().getTables(null, null, null, null);
+//	
+//	sql = "SELECT `name`, `sql` FROM `sqlite_master` WHERE type='table'";
+//	 Statement stmt  = con.createStatement();
+//     rs    = stmt.executeQuery(sql);
+//	while (rs.next()) {
+//	    System.out.println(rs.getString("TABLE_NAME"));
+//	}
+//} catch (SQLException e1) {
+//	// TODO Auto-generated catch block
+//	e1.printStackTrace();
+//}
+//				
 				
 				// Insert record
 				try {
 					
 					// Commit every tot records
-					if ((rowCtr & commitOgniTotRighe) == 0) // Mettiamo ogni 1024 records
+//					if ((rowCtr & commitOgniTotRighe) == 0) 
+					if ((rowCtr % commitOgniTotRighe) == 0) 
 					{
-						System.out.print("\rCommitting at row " + rowCtr);
-						stmt.execute("COMMIT"); // ;
-						sqlExecutedOk.clear();
-						rollbackRecordsFrom = rowCtr;
+						if (!connectionUrl.contains("sqlite"))
+						{
+							System.out.print("\rCommitting at row " + rowCtr);
+							stmt.execute("COMMIT"); // ;
+							sqlExecutedOk.clear();
+							rollbackRecordsFrom = rowCtr;
+						}
 					}
 
 					// TODO Manage user insert
@@ -339,13 +374,18 @@ private void upload2(ConfigQuery configQuery, BufferedReader fileIn, String file
 						sql = configQuery.sql.substring(0, idx+1) + " values(" + sb.toString() + ")";
 						}
 					else if ( configQuery.sql.startsWith("use default insert"))
-						sql = "insert into " + schema + "." + tableName + " values(" + sb.toString() + ")";
+						if (schema.length() > 0)
+							sql = "insert into " + schema + "." + tableName + " values(" + sb.toString() + ")";
+						else
+							sql = "insert into " + tableName + " values(" + sb.toString() + ")";
 					else
 						sql = sql.replace("use parametric insert", "insert into");
 						
 
 					// Else sql reaady
 					String sqlUtf8 = new String (sql.getBytes(), "UTF-8");
+
+//System.out.println("Insert " + sqlUtf8 );
 					stmt.execute(sqlUtf8);
 					
 					if (tabella == TABELLA_TR_TIT_TIT) // 17/11/2017
@@ -386,12 +426,8 @@ private void upload2(ConfigQuery configQuery, BufferedReader fileIn, String file
 							
 						}
 					
-				sqlExecutedOk.add(sql);
-					
-					
-					
+					sqlExecutedOk.add(sql);
 					commitRowCtr++;
-					
 					
 //break;					
 				} catch (SQLException e) {
@@ -404,25 +440,39 @@ private void upload2(ConfigQuery configQuery, BufferedReader fileIn, String file
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
+		if ( elaboraNRighe !=0 && (rowCtr-startLoadingFrom+1) >= elaboraNRighe)
+			break;
+			
+			
 		} // end while
 		try {
 			msg = "\nCommitting at row " + rowCtr;
-System.out.print(msg);
+			System.out.print(msg);
 			OutLog.write(msg);
-			try {
-				stmt.execute("COMMIT"); // ;
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 
-			OutLog.write("\n\n\tRecord letti " + rowCtr);
-			OutLog.write("\n\tRecord errati " + recordsErrati);
-			OutLog.write("\n\tRecord inseriti " + (rowCtr - recordsErrati));
-			
-			System.out.println("\n\tRecord letti " + rowCtr);
+			if (!connectionUrl.contains("sqlite"))
+			{
+				try {
+					stmt.execute("COMMIT"); // ;
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}			
+
+			System.out.println("\n\tStarLoadingFrom " + (startLoadingFrom));
+			System.out.println("\n\n\tRecord letti " + (rowCtr - startLoadingFrom +1));
 			System.out.println("\n\tRecord errati " + recordsErrati);
-			System.out.println("\n\tRecord inseriti " + (rowCtr - recordsErrati));
+			System.out.println("\n\tRecord inseriti " + (rowCtr - recordsErrati - startLoadingFrom +1));
+
+			OutLog.write("\n\tStarLoadingFrom " + (startLoadingFrom));
+			OutLog.write("\n\n\tRecord letti " + (rowCtr - startLoadingFrom));
+			OutLog.write("\n\tRecord errati " + recordsErrati);
+			OutLog.write("\n\tRecord inseriti " + (rowCtr - recordsErrati - startLoadingFrom));
+
+
+			
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -488,8 +538,17 @@ public void upload(String filename) {
 					ret = stmt.execute(setPath);
 				}
 
+				String st;
 				// There is no TRUNCATE command in the SQL standard.
-				String st = "TRUNCATE TABLE " + schema + "." + tableName ; // "sbnweb."
+//				String st = "TRUNCATE TABLE " + schema + "." + tableName ; // "sbnweb."
+
+				if (connectionUrl.contains("sqlite"))
+					st = "DELETE FROM " + tableName +";" ; // SQLITE3
+				else if (connectionUrl.contains("postgresql"))
+					st = "TRUNCATE TABLE " + tableName ; // POSTGRES
+				else
+					st = "TRUNCATE TABLE " + tableName ; // Generic 
+				
 				System.out.println(st);
 				stmt.execute(st); // Esegui questa select per attivare gli indici testuali
 			}
@@ -508,7 +567,22 @@ public void upload(String filename) {
 	}
 
 
-	ArrayList<ConfigQuery> configQueries =  configTable.getConfigQueries(); 
+	
+	String procedureName = filename.substring(0, filename.lastIndexOf('.'));
+	ConfigTable cfgTable = (ConfigTable)this.hashConfigTable.get(procedureName);
+	if (cfgTable == null)
+	{
+		String l = "\n\tConfigurazione non trovata per tabella: " + tableName;
+		try {
+			OutLog.write(l);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(l);
+		return;
+	}
+	ArrayList<ConfigQuery> configQueries = cfgTable.getConfigQueries(); 
 	
 	System.out.println("Inizio caricamento da riga "+startLoadingFrom);
 	
@@ -554,7 +628,9 @@ public void upload(String filename) {
 		} 
 } // End upload
 	
-public static void main(String args[])
+
+
+public static void run_main(String args[])
 {
 	char charSepArrayEquals[] = { '='};
 	char charSepArraySpace[] = { ' '};
@@ -564,13 +640,17 @@ public static void main(String args[])
         System.out.println("Uso: DbUpload <config filename> <List filename>"); // <logFilename>
         System.exit(1);
     }
-    String configFile = args[0];
+	String configFile = args[0];
     String inputFile = args[1];
+	// String configFile = "/home/argentino/indice_3/migrazione_oracle_postgres/DbUpload.cfg";
+    // String inputFile = "/home/argentino/indice_3/migrazione_oracle_postgres/DbUpload.con";
+
+
+
 //	logFileOut = args[2];
     
-    String start=
-       "DbUpload tool - (c) Almaviva S.p.A 2008-2015 V.2015_09_23"+
-	 "\n======================================================="+
+    String start=      
+	 "\n========================================================="+
 	 "\nTool di caricamento della base dati"+
 	 "\nInizio esecuzione " + DateUtil.getDate() + " " + DateUtil.getTime()+ 
 	 "\nFile di configurazione: " + configFile +
@@ -631,7 +711,7 @@ public static void main(String args[])
 								}
 							
 							dbUpload.hashConfigTable.put(dbUpload.configTable.procedureName, dbUpload.configTable);
-							dbUpload.configTable.dump();
+//							dbUpload.configTable.dump();
 						}
 						dbUpload.configTable = new ConfigTable();
 						dbUpload.configTable.procedureName = new String(s.substring(1,s.length() - 1));
@@ -690,7 +770,7 @@ public static void main(String args[])
 				dbUpload.configTable.addQuery(configQuery);
 			
 			dbUpload.hashConfigTable.put(dbUpload.configTable.procedureName, dbUpload.configTable);
-			dbUpload.configTable.dump();
+//			dbUpload.configTable.dump();
 		}
 
 		in.close();
@@ -698,8 +778,7 @@ public static void main(String args[])
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	
-	
+		
 	try {
 //		in = new BufferedReader(new FileReader(inputFile));
 		in = new BufferedReader(new InputStreamReader(new FileInputStream(inputFile),"UTF8"));
@@ -763,12 +842,18 @@ public static void main(String args[])
 						dbUpload.logFileOut = ar[1];
 					else if (ar[0].startsWith("startLoadingFrom"))
 						dbUpload.startLoadingFrom = Long.parseLong(ar[1]);
+
+					else if (ar[0].startsWith("elaboraNRighe"))
+						dbUpload.elaboraNRighe = Long.parseLong(ar[1]);
+					
+					
 					else if (ar[0].startsWith("searchPath"))
 						dbUpload.searchPath = ar[1];
 					else if (ar[0].startsWith("schema"))
 						dbUpload.schema = ar[1];
 					else if (ar[0].startsWith("commitOgniTotRighe"))
-						dbUpload.commitOgniTotRighe = Integer.parseInt(ar[1], 16);
+//						dbUpload.commitOgniTotRighe = Integer.parseInt(ar[1], 16);
+						dbUpload.commitOgniTotRighe = Integer.parseInt(ar[1]);
 					
 					else if (ar[0].startsWith("setCurCfg"))
 					{
@@ -889,10 +974,68 @@ public static void main(String args[])
 		e.printStackTrace();
 	}
 
-    
+	
+} // End run_main 
 
-//    System.out.println("Righe elaborate: " + Integer.toString(rowCounter));
-    System.exit(0);
+
+
+public static void test()
+{
+/*	
+    String url = "jdbc:sqlite:/home/argentino/sqlite3/lo1.db";
+    Connection conn = null;
+    try {
+        conn = DriverManager.getConnection(url);
+        String sql = "SELECT * from mig_coll";
+        Statement stmt  = conn.createStatement();
+        ResultSet rs    = stmt.executeQuery(sql);
+       // loop through the result set
+       while (rs.next()) {
+           System.out.println(rs.getString("col_1") + "\t" + 
+                              rs.getString("col_1") + "\t" +
+                              rs.getString("col_2"));
+       }
+
+    } catch (SQLException e) {
+        System.out.println(e.getMessage());
+    }
+*/
+
+	
+//	int ret;
+//	ret = 1023 % 1024; 
+//	System.out.println("ret="+ret);
+//
+//	ret = 1024 % 1024; 
+//	System.out.println("ret="+ret);
+//
+//	ret = 1025 % 1024; 
+//	System.out.println("ret="+ret);
+//
+//	ret = 2048 % 1024; 
+//	System.out.println("ret="+ret);
+
+//	int ret;
+//	for (int i=0; i < 10000; i++)
+//	{
+//		ret= (i % 1024);
+//		if (ret == 0)
+//		{
+//			System.out.println(i);
+//		}
+//	}
+	
+	
+} // End test
+
+
+
+public static void main(String args[])
+{
+//	test();
+
+	System.out.println ("DbUpload tool - (c) Almaviva S.p.A 2008-2022 V.2022_02_16a"); // fixed section namwe selection
+	run_main(args);
 } // End main
 
 

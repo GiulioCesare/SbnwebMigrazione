@@ -779,7 +779,9 @@ private void updateWithData2(ConfigQuery configQuery, BufferedReader fileIn, Str
 //				if ((rowCtr & 0x3FF) == 0) // Mettiamo ogni 1024 records
 				// if ((rowCtr & 0xF) == 0) // Mettiamo ogni 15
 					
-				if ((rowCtr & commitOgniTotRighe) == 0)	
+//				if ((rowCtr & commitOgniTotRighe) == 0)	
+//				if ((rowCtr & commitOgniTotRighe) == commitOgniTotRighe)	
+				if ((rowCtr % commitOgniTotRighe) == 0) 
 				{
 					//System.out.print("\nCommitting at row " + rowCtr);
 					log("\nCommitting at row " + rowCtr);

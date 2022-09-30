@@ -6,4 +6,8 @@ bin/
 # **/offlineExport/
 **/sbn/polo/
 *.txt
+*.db
+*.log
+
+
 
